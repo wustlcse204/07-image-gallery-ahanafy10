@@ -1,14 +1,205 @@
 <!doctype html>
 <html lang=en>
 <head>
-<script  src="script.js"></script><meta charset=utf-8>
+<script src="script.js"></script><meta charset=utf-8>
 <meta name="Author" content="Ahmed Hanafy">
 <meta name="Home" content="Gallery">
 <title>Image Gallery</title>
 <link rel="stylesheet" href ="style.css" type="text/css">
 </head>
 <body>
-<img id= "photos" onmouseover="hover()" onmouseout="undo()" onclick="zoom()" ondblclick="zoomout()" src=img1.jpg alt="image1">
+  <div class="photos">
+    <a href="#">
+      <img id = "nature" src="nature.jpg"  width="599" height="599" alt="nature">
+    </a>
 
-</body>
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="lake" src="lake.jpg"  width="599" height="599" alt="lake">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="mountain" src="mountain.jpg"  width="599" height="599" alt="mountain">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="sun" src="sunset.jpg"  width="599" height="599" alt="sunset">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="beach" src="beach.jpg"  width="599" height="599" alt="beach">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="view" src="view.jpg"  width="599" height="599" alt="view">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="water" src="water.jpg"  width="599" height="599" alt="water">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="clouds" src="clouds.jpg"  width="599" height="599" alt="clouds">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="cool" src="cool.jpg" width="599" height="599" alt="cool" >
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="pi" src="pi.jpg"  width="599" height="599" alt="pi">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="pnw" src="pnw.jpg"  width="599" height="599" alt="pnw">
+    </a>
+
+  </div>
+
+  <div class="photos">
+    <a href="#">
+      <img id="house" src="house.jpg"  width="599" height="599" alt="house">
+    </a>
+  </div>
+  <div id="gallery" class="gallery">
+    <button onclick="prev()"> <
+    </button>
+    <button onclick="next()"> >
+    </button>
+    <span class="close">&times;</span>
+    <img class="gallery-pics" id="gal" alt="gallery" src="#">
+
+
+  </div>
+  <script>
+  var bigpic = document.getElementById("gal");
+  var total = document.getElementsByTagName("img");
+  var gallery = document.getElementById('gallery');
+  var nature = document.getElementById('nature');
+  var lake = document.getElementById('lake');
+  var mountain = document.getElementById('mountain');
+  var sun = document.getElementById('sun');
+  var beach = document.getElementById('beach');
+  var view = document.getElementById('view');
+  var water = document.getElementById('water');
+  var clouds = document.getElementById('clouds');
+  var cool = document.getElementById('cool');
+  var pi = document.getElementById('pi');
+  var pnw = document.getElementById('pnw');
+  var house = document.getElementById('house');
+var arr = [];
+  var index = 0;
+
+
+  for(i = 0;i<total.length;i++){
+    arr.push(String(total[i].src));
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() {
+    gallery.style.display = "none";
+  }
+
+  nature.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  lake.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  mountain.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  sun.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  beach.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  view.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  water.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  clouds.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  cool.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  pi.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  pnw.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+  house.onclick = function(){
+    index = arr.indexOf(String(this.src));
+    gallery.style.display = "block";
+    bigpic.src = this.src;
+  }
+
+  function next(){
+  index +=1;
+  bigpic.src = arr[index];
+  }
+
+  function prev(){
+  index -=1;
+  bigpic.src = arr[index];
+  }
+  </script>
+
+  </body>
+
 </html>
